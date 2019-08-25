@@ -1,0 +1,32 @@
+{
+	"name": "gulp-webpack",
+	"version": "1.0.0",
+	"description": "",
+	"private": true,
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/rafaellmarques/gulp-webpack.git"
+	},
+	"keywords": [
+		"gulp",
+		"webpack"
+	],
+	"author": "Rafael Marques",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/rafaellmarques/gulp-webpack/issues"
+	},
+	"homepage": "https://github.com/rafaellmarques/gulp-webpack#readme",
+	"devDependencies": {
+		"@babel/core": "^7.5.5",
+		"@babel/preset-env": "^7.5.5",
+		"babel-loader": "^8.0.6",
+		"gulp": "^4.0.2",
+		"gulp-cli": "^2.2.0",
+		"webpack": "^4.39.2",
+		"webpack-stream": "^5.2.1"
+	}
+}
