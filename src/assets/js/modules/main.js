@@ -58,7 +58,7 @@ const main = {
 			} else {
 				return 0;
 			}
-		})
+		});
 	},
 
 	orderDescending(element) {
@@ -70,7 +70,7 @@ const main = {
 			} else {
 				return 0;
 			}
-		})
+		});
 	},
 
 	// Ordena uma lista
@@ -85,15 +85,6 @@ const main = {
 						newList.push(listItem[i]);
 					}
 					type == "desc" ? main.orderDescending(newList) : main.orderAscending(newList);
-					// newList.sort((a, b) => {
-					// 	if (a.textContent < b.textContent) {
-					// 		return -1;
-					// 	} else if (a.textContent > b.textContent) {
-					// 		return 1;
-					// 	} else {
-					// 		return 0;
-					// 	}
-					// });
 					for (let i = 0; i < newList.length; i++) {
 						main.inAfter(newList[i], elementList);
 					}
@@ -137,6 +128,7 @@ const main = {
 	getParent() {
 		var item = document.querySelectorAll(".filters .item");
 		if (!!item) {
+			item.trim;
 			item.forEach(element => {
 				var itemChild = element.firstElementChild;
 				if (!!itemChild && itemChild.classList.contains("item")) {

@@ -3,7 +3,7 @@
 module.exports = {
 	mode: "none",
 	output: {
-		filename: "bundle.js"
+		filename: "store.js"
 	},
 	module: {
 		rules: [
