@@ -74,7 +74,7 @@ const main = {
 	},
 
 	// Ordena uma lista
-	orderList(element, type) {
+	orderList(element) {
 		const list = document.querySelectorAll(element);
 		if (!!list) {
 			list.forEach(elementList => {
@@ -84,7 +84,13 @@ const main = {
 					for (let i = 0; i < listItem.length; i++) {
 						newList.push(listItem[i]);
 					}
-					type == "desc" ? main.orderDescending(newList) : main.orderAscending(newList);
+					if (elementList.classList.contains("list-ascending")) {
+						main.orderAscending(newList);
+					} else if (elementList.classList.contains("list-descending")) {
+						main.orderDescending(newList);
+					} else {
+						//todo
+					}
 					for (let i = 0; i < newList.length; i++) {
 						main.inAfter(newList[i], elementList);
 					}
@@ -94,7 +100,7 @@ const main = {
 	},
 
 	minifiedHeader() {
-		window.addEventListener("scroll", function() {
+		window.addEventListener("scroll", () => {
 			const header = document.querySelector(".header");
 			const showScroll = document.querySelector(".showScroll");
 
@@ -108,7 +114,7 @@ const main = {
 		var fileLabel = document.querySelector(".product-file-upload-value");
 		var fileName = "";
 
-		fileField.addEventListener("change", function(e) {
+		fileField.addEventListener("change", e => {
 			fileName = e.target.value.split("\\").pop();
 
 			if (fileName) {
@@ -116,11 +122,11 @@ const main = {
 			}
 		});
 
-		fileField.addEventListener("focus", function() {
+		fileField.addEventListener("focus", () => {
 			fileField.classList.add("has-focus");
 		});
 
-		fileField.addEventListener("blur", function() {
+		fileField.addEventListener("blur", () => {
 			fileField.classList.remove("has-focus");
 		});
 	},
@@ -136,6 +142,35 @@ const main = {
 				}
 			});
 		}
+	},
+
+	instagramFeed() {
+		const token = "267545657.62f8a58.b42b65c64ea44256aa50a490a6e5bb7c";
+		const link = "https://api.instagram.com/v1/users/self/media/recent/?access_token=";
+		const instagramList = document.querySelector(".instagram-list");
+
+		fetch(link + token)
+			.then(res => res.json())
+			.then(res => {
+				console.log(res);
+				res.data.forEach(element => {
+					console.log(res.data.length);
+					try {
+						const instagramListItem = document.createElement("li");
+						instagramListItem.classList.add("instagram-list-item");
+						const image = document.createElement("img");
+						image.id = element.id;
+						image.src = element.images.low_resolution.url;
+						instagramList.appendChild(image);
+					} catch (err) {
+						console.log(err);
+					}
+				});
+			})
+			.catch(err => {
+				console.log("u");
+				alert("Sorry, there are no results for your search");
+			});
 	}
 };
 

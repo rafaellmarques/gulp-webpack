@@ -181,7 +181,7 @@ var main = {
     });
   },
   // Ordena uma lista
-  orderList: function orderList(element, type) {
+  orderList: function orderList(element) {
     var list = document.querySelectorAll(element);
 
     if (!!list) {
@@ -195,7 +195,12 @@ var main = {
             newList.push(listItem[i]);
           }
 
-          type == "desc" ? main.orderDescending(newList) : main.orderAscending(newList);
+          if (elementList.classList.contains("list-ascending")) {
+            main.orderAscending(newList);
+          } else if (elementList.classList.contains("list-descending")) {
+            main.orderDescending(newList);
+          } else {//todo
+          }
 
           for (var _i = 0; _i < newList.length; _i++) {
             main.inAfter(newList[_i], elementList);
@@ -243,6 +248,33 @@ var main = {
         }
       });
     }
+  },
+  instagramFeed: function instagramFeed() {
+    var token = "267545657.62f8a58.b42b65c64ea44256aa50a490a6e5bb7c";
+    var link = "https://api.instagram.com/v1/users/self/media/recent/?access_token=";
+    var instagramList = document.querySelector(".instagram-list");
+    fetch(link + token).then(function (res) {
+      return res.json();
+    }).then(function (res) {
+      console.log(res);
+      res.data.forEach(function (element) {
+        console.log(res.data.length);
+
+        try {
+          var instagramListItem = document.createElement("li");
+          instagramListItem.classList.add("instagram-list-item");
+          var image = document.createElement("img");
+          image.id = element.id;
+          image.src = element.images.low_resolution.url;
+          instagramList.appendChild(image);
+        } catch (err) {
+          console.log(err);
+        }
+      });
+    })["catch"](function (err) {
+      console.log("u");
+      alert("Sorry, there are no results for your search");
+    });
   }
 };
 
@@ -268,7 +300,8 @@ var home = {
     _modules_main__WEBPACK_IMPORTED_MODULE_0__["main"].minifiedHeader();
     _modules_main__WEBPACK_IMPORTED_MODULE_0__["main"].getFileName();
     _modules_main__WEBPACK_IMPORTED_MODULE_0__["main"].getParent();
-    _modules_main__WEBPACK_IMPORTED_MODULE_0__["main"].orderList(".list", "desc");
+    _modules_main__WEBPACK_IMPORTED_MODULE_0__["main"].orderList(".list");
+    _modules_main__WEBPACK_IMPORTED_MODULE_0__["main"].instagramFeed();
     console.log("Página: Home");
   }
 };

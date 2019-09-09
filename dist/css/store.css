@@ -13,21 +13,6 @@ body .container-full {
   max-width: 100%;
 }
 
-body .list {
-  border: 1px solid #cccccc;
-  border-radius: 10px;
-  padding: 1em;
-}
-
-body .list li {
-  line-height: 1.5rem;
-  list-style: none;
-}
-
-body .list li a {
-  line-height: 1rem;
-}
-
 body ::before,
 body ::after {
   -webkit-box-sizing: border-box;
@@ -821,6 +806,22 @@ body.home .main .column-10 {
 .header.minified .header-logo-a {
   max-height: 22.5px;
   width: auto;
+}
+
+.list {
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  padding: 1em;
+}
+
+.list li {
+  line-height: 1.5rem;
+  list-style: none;
+}
+
+.list li a {
+  line-height: 1rem;
 }
 
 .loader {

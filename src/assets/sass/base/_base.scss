@@ -21,21 +21,6 @@ body {
 		}
 	}
 
-	.list {
-		border: 1px solid #cccccc;
-		border-radius: 10px;
-		padding: 1em;
-
-		li {
-			line-height: 1.5rem;
-			list-style: none;
-
-			a {
-				line-height: 1rem;
-			}
-		}
-	}
-
 	::before,
 	::after {
 		-webkit-box-sizing: border-box;

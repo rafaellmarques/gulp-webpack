@@ -6,7 +6,8 @@ const home = {
 		main.minifiedHeader();
 		main.getFileName();
 		main.getParent();
-		main.orderList(".list", "desc");
+		main.orderList(".list");
+		main.instagramFeed();
 		console.log("Página: Home");
 	}
 };
