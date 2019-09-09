@@ -256,22 +256,19 @@ var main = {
     fetch(link + token).then(function (res) {
       return res.json();
     }).then(function (res) {
-      console.log(res);
-      res.data.forEach(function (element) {
-        console.log(res.data.length);
-
+      res.data.forEach(function (element, index) {
         try {
-          var instagramListItem = document.createElement("li");
-          instagramListItem.classList.add("instagram-list-item");
           var image = document.createElement("img");
           image.id = element.id;
-          image.src = element.images.low_resolution.url;
+          image.src = element.images.thumbnail.url;
+          var instagramListItem = document.createElement("li");
+          instagramListItem.classList.add("instagram-list-item");
           instagramList.appendChild(image);
         } catch (err) {
           console.log(err);
         }
       });
-    })["catch"](function (err) {
+    }).catch(function (err) {
       console.log("u");
       alert("Sorry, there are no results for your search");
     });

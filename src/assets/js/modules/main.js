@@ -152,16 +152,15 @@ const main = {
 		fetch(link + token)
 			.then(res => res.json())
 			.then(res => {
-				console.log(res);
-				res.data.forEach(element => {
-					console.log(res.data.length);
+				res.data.forEach((element, index) => {
 					try {
-						const instagramListItem = document.createElement("li");
-						instagramListItem.classList.add("instagram-list-item");
 						const image = document.createElement("img");
 						image.id = element.id;
-						image.src = element.images.low_resolution.url;
+						image.src = element.images.thumbnail.url;						
+						const instagramListItem = document.createElement("li");
+						instagramListItem.classList.add("instagram-list-item");
 						instagramList.appendChild(image);
+
 					} catch (err) {
 						console.log(err);
 					}
