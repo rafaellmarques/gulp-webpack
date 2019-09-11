@@ -1,0 +1,14 @@
+.instagram {
+	&-list {
+		align-items: center;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: flex-start;
+		margin: 0;
+		padding: 0;
+	}
+	&-list-item {
+		margin: 0;
+		padding: 5px;
+	}
+}

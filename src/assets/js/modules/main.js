@@ -86,7 +86,9 @@ const main = {
 					}
 					if (elementList.classList.contains("list-ascending")) {
 						main.orderAscending(newList);
-					} else if (elementList.classList.contains("list-descending")) {
+					} else if (
+						elementList.classList.contains("list-descending")
+					) {
 						main.orderDescending(newList);
 					} else {
 						//todo
@@ -105,7 +107,9 @@ const main = {
 			const showScroll = document.querySelector(".showScroll");
 
 			showScroll ? (showScroll.innerHTML = pageYOffset + "px") : "0";
-			pageYOffset >= header.clientHeight / 2 ? header.classList.add("minified") : header.classList.remove("minified");
+			pageYOffset >= header.clientHeight / 2
+				? header.classList.add("minified")
+				: header.classList.remove("minified");
 		});
 	},
 
@@ -153,14 +157,17 @@ const main = {
 			.then(res => res.json())
 			.then(res => {
 				res.data.forEach((element, index) => {
+
 					try {
 						const image = document.createElement("img");
 						image.id = element.id;
-						image.src = element.images.thumbnail.url;						
-						const instagramListItem = document.createElement("li");
-						instagramListItem.classList.add("instagram-list-item");
-						instagramList.appendChild(image);
-
+						image.src = element.images.thumbnail.url;
+						
+						const elInstagramListItem = document.createElement("li");
+						elInstagramListItem.classList.add("instagram-list-item");
+						elInstagramListItem.appendChild(image);
+						
+						instagramList.appendChild(elInstagramListItem);
 					} catch (err) {
 						console.log(err);
 					}

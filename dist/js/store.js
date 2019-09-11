@@ -261,9 +261,10 @@ var main = {
           var image = document.createElement("img");
           image.id = element.id;
           image.src = element.images.thumbnail.url;
-          var instagramListItem = document.createElement("li");
-          instagramListItem.classList.add("instagram-list-item");
-          instagramList.appendChild(image);
+          var elInstagramListItem = document.createElement("li");
+          elInstagramListItem.classList.add("instagram-list-item");
+          elInstagramListItem.appendChild(image);
+          instagramList.appendChild(elInstagramListItem);
         } catch (err) {
           console.log(err);
         }
