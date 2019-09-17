@@ -1,6 +1,10 @@
 ﻿.list {
 	border-radius: 10px;
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+	display: flex;
+	flex: 1;
+	flex-flow: column nowrap;
+	margin: 0;
 	padding: 1em;
 
 	li {
@@ -10,5 +14,20 @@
 		a {
 			line-height: 1rem;
 		}
+	}
+
+	&-horizontal {
+		flex-flow: row wrap;
+	}
+}
+
+.lists {
+	border-radius: 10px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+	display: flex;
+	flex-flow: row nowrap;
+
+	.list {
+		box-shadow: none;
 	}
 }

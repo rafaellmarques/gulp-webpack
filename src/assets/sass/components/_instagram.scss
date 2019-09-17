@@ -8,7 +8,14 @@
 		padding: 0;
 	}
 	&-list-item {
+		display: flex;
+		flex: 1;
 		margin: 0;
 		padding: 5px;
+
+		img {
+			display: block;
+			margin: 0 auto;
+		}
 	}
 }
