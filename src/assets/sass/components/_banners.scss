@@ -1,0 +1,17 @@
+﻿.banner {
+	display: flex;
+	flex-flow: row nowrap;
+	width: 100%;
+
+	&-list {
+		margin: 0;
+
+		&-link {
+			display: flex;
+		}
+
+		&-image {
+			width: 100%;
+		}
+	}
+}

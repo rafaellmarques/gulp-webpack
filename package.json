@@ -23,6 +23,7 @@
 	"devDependencies": {
 		"@babel/core": "^7.5.5",
 		"@babel/preset-env": "^7.5.5",
+		"@glidejs/glide": "^3.3.0",
 		"babel-loader": "^8.0.6",
 		"browser-sync": "^2.26.7",
 		"gulp": "^4.0.2",
@@ -36,5 +37,6 @@
 		"gulp-sourcemaps": "^2.6.5",
 		"webpack": "^4.39.2",
 		"webpack-stream": "^5.2.1"
-	}
+	},
+	"dependencies": {}
 }

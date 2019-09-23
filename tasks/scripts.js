@@ -1,5 +1,6 @@
 ﻿// Packages
 const gulp = require("gulp");
+const sourcemaps = require("gulp-sourcemaps");
 const webpack = require("webpack");
 const webpackstream = require("webpack-stream");
 const webpackconfig = require("../webpack.config");
@@ -14,7 +15,9 @@ const paths = {
 scriptTranspilation = () => {
 	return gulp
 		.src(paths.input)
+		.pipe(sourcemaps.init())
 		.pipe(webpackstream(webpackconfig, webpack))
+		.pipe(sourcemaps.write("."))
 		.pipe(gulp.dest(paths.output));
 };
 

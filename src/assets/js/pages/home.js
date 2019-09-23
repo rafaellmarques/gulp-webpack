@@ -7,7 +7,8 @@ const home = {
 		main.getFileName();
 		main.getParent();
 		main.orderList(".list");
-		main.instagramFeed();
+		main.instagram();
+		main.bannerControl();
 		console.log("Página: Home");
 	}
 };

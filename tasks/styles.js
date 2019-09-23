@@ -1,8 +1,8 @@
 // Packages
 const gulp = require("gulp");
 const autoprefixer = require("gulp-autoprefixer");
-const sass = require("gulp-sass");
 const concat = require("gulp-concat");
+const sass = require("gulp-sass");
 const sourcemaps = require("gulp-sourcemaps");
 
 sass.compiler = require("node-sass");

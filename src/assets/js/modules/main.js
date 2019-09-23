@@ -1,4 +1,4 @@
-import { defaultCoreCipherList } from "constants";
+import glide from "@glidejs/glide";
 
 const main = {
 	// Função olá;
@@ -86,9 +86,7 @@ const main = {
 					}
 					if (elementList.classList.contains("list-ascending")) {
 						main.orderAscending(newList);
-					} else if (
-						elementList.classList.contains("list-descending")
-					) {
+					} else if (elementList.classList.contains("list-descending")) {
 						main.orderDescending(newList);
 					} else {
 						//todo
@@ -107,9 +105,7 @@ const main = {
 			const showScroll = document.querySelector(".showScroll");
 
 			showScroll ? (showScroll.innerHTML = pageYOffset + "px") : "0";
-			pageYOffset >= header.clientHeight / 2
-				? header.classList.add("minified")
-				: header.classList.remove("minified");
+			pageYOffset >= header.clientHeight / 2 ? header.classList.add("minified") : header.classList.remove("minified");
 		});
 	},
 
@@ -148,7 +144,7 @@ const main = {
 		}
 	},
 
-	instagramFeed() {
+	instagram() {
 		const token = "267545657.62f8a58.b42b65c64ea44256aa50a490a6e5bb7c";
 		const link = "https://api.instagram.com/v1/users/self/media/recent/?access_token=";
 		const instagramList = document.querySelector(".instagram-list");
@@ -157,16 +153,16 @@ const main = {
 			.then(res => res.json())
 			.then(res => {
 				res.data.forEach((element, index) => {
-
 					try {
 						const image = document.createElement("img");
+						image.classList.add("instagram-list-image");
 						image.id = element.id;
 						image.src = element.images.thumbnail.url;
-						
+
 						const elInstagramListItem = document.createElement("li");
 						elInstagramListItem.classList.add("instagram-list-item");
 						elInstagramListItem.appendChild(image);
-						
+
 						instagramList.appendChild(elInstagramListItem);
 					} catch (err) {
 						console.log(err);
@@ -177,6 +173,31 @@ const main = {
 				console.log("u");
 				alert("Sorry, there are no results for your search");
 			});
+
+		main.createCarroussel(instagramList, 1, false);
+	},
+
+	bannerControl() {
+		const bannerList = document.querySelector(".banner-list");
+		if (!!bannerList) {
+			main.createCarroussel(bannerList, 1, 5000);
+		}
+	},
+
+	createCarroussel(element, perview, autoplay) {
+		if (!!element) {
+			element.classList.add("glide__slides");
+			element.parentNode.classList.add("glide__track");
+			element.parentNode.setAttribute("data-glide-el", "track");
+			element.parentNode.parentNode.classList.add("glide");
+
+			new glide(element.parentNode.parentNode, {
+				autoplay: autoplay,
+				perView: perview,
+				startAt: 0,
+				type: "caroussel"
+			}).mount();
+		}
 	}
 };
 
