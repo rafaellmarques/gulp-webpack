@@ -1070,30 +1070,20 @@ body.home .main .column-10 {
   padding: 0;
 }
 
-<<<<<<< HEAD
 .instagram-list-item:not(.glide-slide) {
   border-radius: 10px;
-=======
-.instagram-list-item {
->>>>>>> 2f363625bdf9b819b35ed22241029fd59f8f6e8c
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-flex: 1;
-<<<<<<< HEAD
   -ms-flex-positive: 1;
   flex-grow: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
-=======
-  -ms-flex: 1;
-  flex: 1;
->>>>>>> 2f363625bdf9b819b35ed22241029fd59f8f6e8c
   margin: 0;
   padding: 5px;
 }
 
-<<<<<<< HEAD
 .instagram-list-item:not(.glide-slide):hover {
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
@@ -1107,21 +1097,12 @@ body.home .main .column-10 {
 }
 
 .lists {
-=======
-.instagram-list-item img {
-  display: block;
-  margin: 0 auto;
-}
-
-.list {
->>>>>>> 2f363625bdf9b819b35ed22241029fd59f8f6e8c
   border-radius: 10px;
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-<<<<<<< HEAD
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -ms-flex-flow: row nowrap;
@@ -1133,21 +1114,13 @@ body.home .main .column-10 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-=======
-  -webkit-box-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
->>>>>>> 2f363625bdf9b819b35ed22241029fd59f8f6e8c
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-flow: column nowrap;
   flex-flow: column nowrap;
-<<<<<<< HEAD
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
-=======
->>>>>>> 2f363625bdf9b819b35ed22241029fd59f8f6e8c
   margin: 0;
   padding: 1em;
 }
