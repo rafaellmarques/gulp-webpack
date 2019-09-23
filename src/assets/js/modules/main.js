@@ -147,6 +147,7 @@ const main = {
 	instagram() {
 		const token = "267545657.62f8a58.b42b65c64ea44256aa50a490a6e5bb7c";
 		const link = "https://api.instagram.com/v1/users/self/media/recent/?access_token=";
+		const token = "267545657.62f8a58.b42b65c64ea44256aa50a490a6e5bb7c";
 		const instagramList = document.querySelector(".instagram-list");
 
 		fetch(link + token)

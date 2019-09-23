@@ -1,7 +1,11 @@
 // Google Fonts
 @import url("https://fonts.googleapis.com/css?family=Nunito|Open+Sans|Raleway|Roboto|Ubuntu&display=swap");
 
+// Google Material Icons
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
 // Font Variables
+$MaterialIcons: "Material Icons" !default;
 $Nunito: "Nunito", sans-serif !default;
 $OpenSans: "Open Sans", sans-serif !default;
 $Raleway: "Raleway", sans-serif !default;
@@ -26,5 +30,34 @@ body {
 		box-sizing: border-box;
 		height: auto;
 		width: auto;
+	}
+
+	.material-icons {
+		direction: ltr;
+		display: inline-block;
+		font-family: $MaterialIcons;
+
+		/* Support for IE. */
+		font-feature-settings: "liga";
+		
+		font-size: 24px; /* Preferred icon size */
+
+		/* Support for all WebKit browsers. */
+		-webkit-font-smoothing: antialiased;
+
+		/* Support for Firefox. */
+		-moz-osx-font-smoothing: grayscale;
+		
+		font-style: normal;
+		font-weight: normal;
+		letter-spacing: normal;
+		line-height: 1;
+
+		/* Support for Safari and Chrome. */
+		text-rendering: optimizeLegibility;
+		
+		text-transform: none;
+		white-space: nowrap;
+		word-wrap: normal;
 	}
 }
