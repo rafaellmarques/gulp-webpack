@@ -149,47 +149,51 @@ const main = {
 		const token = "267545657.62f8a58.b42b65c64ea44256aa50a490a6e5bb7c";
 		const instagramList = document.querySelector(".instagram-list");
 
-		fetch(link + token)
-			.then(res => res.json())
-			.then(res => {
-				res.data.forEach((element, index) => {
-					try {
-						const image = document.createElement("img");
-						image.classList.add("instagram-list-image");
-						image.id = element.id;
-						image.src = element.images.thumbnail.url;
+		if (!!instagramList) {
+			fetch(link + token)
+				.then(res => res.json())
+				.then(res => {
+					res.data.forEach((element) => {
+						try {
+							const image = document.createElement("img");
+							image.classList.add("instagram-list-image");
+							image.id = element.id;
+							image.src = element.images.thumbnail.url;
 
-						const elInstagramListItem = document.createElement("li");
-						elInstagramListItem.classList.add("instagram-list-item");
-						elInstagramListItem.appendChild(image);
+							const elInstagramListItem = document.createElement("li");
+							elInstagramListItem.classList.add("instagram-list-item");
+							elInstagramListItem.appendChild(image);
 
-						instagramList.appendChild(elInstagramListItem);
-					} catch (err) {
-						console.log(err);
-					}
+							instagramList.appendChild(elInstagramListItem);
+						} catch (err) {
+							console.log(err);
+						}
+					});
+				})
+				.catch(err => {
+					console.log("u");
+					alert("Sorry, there are no results for your search");
 				});
-			})
-			.catch(err => {
-				console.log("u");
-				alert("Sorry, there are no results for your search");
-			});
-
-		main.createCarroussel(instagramList, 1, false);
-	},
-
-	bannerControl() {
-		const bannerList = document.querySelector(".banner-list");
-		if (!!bannerList) {
-			main.createCarroussel(bannerList, 1, 5000);
 		}
 	},
 
-	createCarroussel(element, perview, autoplay) {
+	bannerCarousel() {
+		const bannerList = document.querySelector(".banner-list");
+		if (!!bannerList) {
+			main.createCarousel(bannerList, 1, 5000);
+		}
+	},
+
+	createCarousel(element, perview, autoplay) {
 		if (!!element) {
 			element.classList.add("glide__slides");
 			element.parentNode.classList.add("glide__track");
 			element.parentNode.setAttribute("data-glide-el", "track");
 			element.parentNode.parentNode.classList.add("glide");
+	
+			for (let i = 0; i < element.children.length; i++) {
+				element.children[i].classList.add("glide__slide");
+			}
 
 			new glide(element.parentNode.parentNode, {
 				autoplay: autoplay,

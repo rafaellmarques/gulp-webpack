@@ -8,7 +8,7 @@ const home = {
 		main.getParent();
 		main.orderList(".list");
 		main.instagram();
-		main.bannerControl();
+		main.bannerCarousel();
 		console.log("Página: Home");
 	}
 };

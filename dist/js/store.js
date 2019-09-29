@@ -252,42 +252,49 @@ var main = {
     var link = "https://api.instagram.com/v1/users/self/media/recent/?access_token=";
     var token = "267545657.62f8a58.b42b65c64ea44256aa50a490a6e5bb7c";
     var instagramList = document.querySelector(".instagram-list");
-    fetch(link + token).then(function (res) {
-      return res.json();
-    }).then(function (res) {
-      res.data.forEach(function (element, index) {
-        try {
-          var image = document.createElement("img");
-          image.classList.add("instagram-list-image");
-          image.id = element.id;
-          image.src = element.images.thumbnail.url;
-          var elInstagramListItem = document.createElement("li");
-          elInstagramListItem.classList.add("instagram-list-item");
-          elInstagramListItem.appendChild(image);
-          instagramList.appendChild(elInstagramListItem);
-        } catch (err) {
-          console.log(err);
-        }
+
+    if (!!instagramList) {
+      fetch(link + token).then(function (res) {
+        return res.json();
+      }).then(function (res) {
+        res.data.forEach(function (element) {
+          try {
+            var image = document.createElement("img");
+            image.classList.add("instagram-list-image");
+            image.id = element.id;
+            image.src = element.images.thumbnail.url;
+            var elInstagramListItem = document.createElement("li");
+            elInstagramListItem.classList.add("instagram-list-item");
+            elInstagramListItem.appendChild(image);
+            instagramList.appendChild(elInstagramListItem);
+          } catch (err) {
+            console.log(err);
+          }
+        });
+      }).catch(function (err) {
+        console.log("u");
+        alert("Sorry, there are no results for your search");
       });
-    }).catch(function (err) {
-      console.log("u");
-      alert("Sorry, there are no results for your search");
-    });
-    main.createCarroussel(instagramList, 1, false);
+    }
   },
-  bannerControl: function bannerControl() {
+  bannerCarousel: function bannerCarousel() {
     var bannerList = document.querySelector(".banner-list");
 
     if (!!bannerList) {
-      main.createCarroussel(bannerList, 1, 5000);
+      main.createCarousel(bannerList, 1, 5000);
     }
   },
-  createCarroussel: function createCarroussel(element, perview, autoplay) {
+  createCarousel: function createCarousel(element, perview, autoplay) {
     if (!!element) {
       element.classList.add("glide__slides");
       element.parentNode.classList.add("glide__track");
       element.parentNode.setAttribute("data-glide-el", "track");
       element.parentNode.parentNode.classList.add("glide");
+
+      for (var i = 0; i < element.children.length; i++) {
+        element.children[i].classList.add("glide__slide");
+      }
+
       new _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__["default"](element.parentNode.parentNode, {
         autoplay: autoplay,
         perView: perview,
@@ -3992,7 +3999,7 @@ var home = {
     _modules_main__WEBPACK_IMPORTED_MODULE_0__["main"].getParent();
     _modules_main__WEBPACK_IMPORTED_MODULE_0__["main"].orderList(".list");
     _modules_main__WEBPACK_IMPORTED_MODULE_0__["main"].instagram();
-    _modules_main__WEBPACK_IMPORTED_MODULE_0__["main"].bannerControl();
+    _modules_main__WEBPACK_IMPORTED_MODULE_0__["main"].bannerCarousel();
     console.log("Página: Home");
   }
 };

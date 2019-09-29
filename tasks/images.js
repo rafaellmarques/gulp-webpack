@@ -1,6 +1,7 @@
 // Packages
 const gulp = require("gulp");
 const cache = require("gulp-cache");
+const flatten = require("gulp-flatten");
 const imagemin = require("gulp-imagemin");
 
 // Paths
@@ -14,6 +15,7 @@ imagesMinify = () => {
 	return gulp
 		.src(paths.src)
 		.pipe(cache(imagemin()))
+		.pipe(flatten())
 		.pipe(gulp.dest([paths.dest]));
 };
 
