@@ -212,8 +212,8 @@ var main = {
     window.addEventListener("scroll", function () {
       var header = document.querySelector(".header");
       var showScroll = document.querySelector(".showScroll");
-      showScroll ? showScroll.innerHTML = pageYOffset + "px" : "0";
-      pageYOffset >= header.clientHeight / 2 ? header.classList.add("minified") : header.classList.remove("minified");
+      showScroll ? showScroll.innerHTML = parseInt(pageYOffset) + "px" : "0";
+      parseInt(pageYOffset) >= header.clientHeight ? header.classList.add("minified") : header.classList.remove("minified");
     });
   },
   getFileName: function getFileName() {

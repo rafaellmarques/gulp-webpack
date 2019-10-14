@@ -3,6 +3,7 @@
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 	display: flex;
 	flex-flow: row nowrap;
+	overflow: hidden;
 }
 
 .list {
@@ -28,12 +29,8 @@
 }
 
 .lists {
-	border-radius: 10px;
-	box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-	display: flex;
-	flex-flow: row nowrap;
-
 	.list {
-		box-shadow: none;
+		border-radius: 0;
+		box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
 	}
 }

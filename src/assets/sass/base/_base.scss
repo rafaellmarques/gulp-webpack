@@ -1,3 +1,8 @@
+// Variables
+$d: 1200px;
+$tp: 720px;
+$tl: 1024px;
+
 // Google Fonts
 @import url("https://fonts.googleapis.com/css?family=Nunito|Open+Sans|Raleway|Roboto|Ubuntu&display=swap");
 
@@ -18,18 +23,70 @@ body {
 	.container {
 		height: auto;
 		margin: 0 auto;
+		max-width: 1200px;
+		padding: 1rem;
+		width: 100%;
 
 		&-full {
 			max-width: 100%;
 		}
 	}
 
-	::before,
-	::after {
-		-webkit-box-sizing: border-box;
-		box-sizing: border-box;
-		height: auto;
-		width: auto;
+	.row {
+		align-content: flex-start;
+		align-items: flex-start;
+		display: flex;
+		flex-basis: auto;
+		flex-direction: row;
+		flex-grow: 1;
+		flex-wrap: nowrap;
+		justify-content: flex-start;
+		justify-items: flex-start;
+		width: 100%;
+	}
+
+	.column {
+		width: 100%;
+
+		&-1 {
+			width: (100% / 10);
+		}
+
+		&-2 {
+			width: (100% / 9);
+		}
+
+		&-3 {
+			width: (100% / 8);
+		}
+
+		&-4 {
+			width: (100% / 7);
+		}
+
+		&-5 {
+			width: (100% / 6);
+		}
+
+		&-6 {
+			width: (100% / 5);
+		}
+
+		&-7 {
+			width: (100% / 4);
+		}
+
+		&-8 {
+			width: (100% / 3);
+		}
+
+		&-9 {
+			width: (100% / 2);
+		}
+
+		&-10 {
+			width: (100% / 1);
+		}
 	}
 
 	.material-icons {
@@ -59,5 +116,13 @@ body {
 		text-transform: none;
 		white-space: nowrap;
 		word-wrap: normal;
+	}
+
+	::before,
+	::after {
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+		height: auto;
+		width: auto;
 	}
 }

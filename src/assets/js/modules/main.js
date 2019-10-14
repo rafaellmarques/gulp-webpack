@@ -104,8 +104,9 @@ const main = {
 			const header = document.querySelector(".header");
 			const showScroll = document.querySelector(".showScroll");
 
-			showScroll ? (showScroll.innerHTML = pageYOffset + "px") : "0";
-			pageYOffset >= header.clientHeight / 2 ? header.classList.add("minified") : header.classList.remove("minified");
+			showScroll ? (showScroll.innerHTML = parseInt(pageYOffset) + "px") : "0";
+
+			parseInt(pageYOffset) >= header.clientHeight ? header.classList.add("minified") : header.classList.remove("minified");
 		});
 	},
 
@@ -153,7 +154,7 @@ const main = {
 			fetch(link + token)
 				.then(res => res.json())
 				.then(res => {
-					res.data.forEach((element) => {
+					res.data.forEach(element => {
 						try {
 							const image = document.createElement("img");
 							image.classList.add("instagram-list-image");
@@ -190,7 +191,7 @@ const main = {
 			element.parentNode.classList.add("glide__track");
 			element.parentNode.setAttribute("data-glide-el", "track");
 			element.parentNode.parentNode.classList.add("glide");
-	
+
 			for (let i = 0; i < element.children.length; i++) {
 				element.children[i].classList.add("glide__slide");
 			}

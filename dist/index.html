@@ -6,26 +6,24 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<title>Document</title>
 		<link rel="stylesheet" href="./css/store.css" />
-		<!-- development version, includes helpful console warnings -->
-		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-		<script src="./js/store.js"></script>
 	</head>
 
 	<body class="home">
+		<div id="vue-loader"></div>
 		<div class="loader">
 			<div class="loader_box">
 				<div class="box_inner one"></div>
 				<div class="box_inner two"></div>
 			</div>
-			<img class="loader_logo" src="./img/logo_synapcom.png" alt="" />
+			<img class="loader_logo" src="./img/logo_apache.png" alt="" />
 		</div>
 		<header class="header">
-			<div class="container">
-				<div class="header-flex">
+			<div class="header-flex">
+				<div class="flex-container">
 					<div class="header-logo">
 						<h1 class="header-logo-h1">
 							<a href="" class="header-logo-a">
-								<img src="./img/logo_synapcom.png" alt="" class="header-logo-img" />
+								<img src="./img/logo_apache.png" alt="Aliquam" class="header-logo-img" />
 							</a>
 						</h1>
 					</div>
@@ -41,232 +39,265 @@
 						<div class="showScroll"></div>
 					</div>
 				</div>
-				<div class="header-nav">
-					<ul class="nav-container">
-						<li class="nav-item">A</li>
-						<li class="nav-item">B</li>
-						<li class="nav-item">C</li>
-						<li class="nav-item">D</li>
-						<li class="nav-item">E</li>
-					</ul>
-				</div>
+			</div>
+			<div class="header-nav">
+				<ul class="nav-container">
+					<li class="nav-item">A</li>
+					<li class="nav-item">B</li>
+					<li class="nav-item">C</li>
+					<li class="nav-item">D</li>
+					<li class="nav-item">E</li>
+				</ul>
 			</div>
 		</header>
 		<main class="main">
-			<div class="container">
-				<div class="content">
-					<section id="bannerMain">
-						<div class="banner">
-							<div class="banner-container">
-								<ul class="banner-list">
-									<li class="banner-list-item">
-										<a href="" class="banner-list-link"><img src="./img/marvel-p1.jpg" alt="" class="banner-list-image"/></a>
-									</li>
-									<li class="banner-list-item">
-										<a href="" class="banner-list-link"><img src="./img/marvel-p2.jpg" alt="" class="banner-list-image"/></a>
-									</li>
-									<li class="banner-list-item">
-										<a href="" class="banner-list-link"><img src="./img/marvel-p3.jpg" alt="" class="banner-list-image"/></a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</section>
-					<section class="breadcrumbs">
-						<ul class="breadcrumbs-container">
-							<li class="breadcrumbs-item">
-								<span class="item">A</span>
+			<section class="banner">
+				<div id="banner-top">
+					<div class="banner-container">
+						<ul class="banner-list">
+							<li class="banner-list-item">
+								<a href="#" class="banner-list-link"><img src="./img/marvel-p1.jpg" alt="" class="banner-list-image"/></a>
 							</li>
-							<li class="breadcrumbs-item">
-								<span class="item">B</span>
+							<li class="banner-list-item">
+								<a href="#" class="banner-list-link"><img src="./img/marvel-p2.jpg" alt="" class="banner-list-image"/></a>
 							</li>
-							<li class="breadcrumbs-item">
-								<span class="item">C<span class="item">CC</span></span>
-							</li>
-							<li class="breadcrumbs-item">
-								<span class="item">D<span class="item">DD</span></span>
-							</li>
-							<li class="breadcrumbs-item">
-								<span class="item active">E</span>
+							<li class="banner-list-item">
+								<a href="#" class="banner-list-link"><img src="./img/marvel-p3.jpg" alt="" class="banner-list-image"/></a>
 							</li>
 						</ul>
-					</section>
-					<section>
-						<h4 class="section-title">Lists</h4>
-						<div class="row">
-							<div class="column">
-								<div class="lists">
-									<ul class="list">
-										<li data-name="Rafael">
-											<a href="#Rafael">Rafael</a>
-										</li>
-										<li data-name="Renata">
-											<a href="#Renata">Renata</a>
-										</li>
-										<li data-name="Sonia">
-											<a href="#Sonia">Sonia</a>
-										</li>
-										<li data-name="Laercio">
-											<a href="#Laercio">Laércio</a>
-										</li>
-										<li data-name="Miguel">
-											<a href="#Miguel">Miguel</a>
-										</li>
-										<li data-name="Fabio">
-											<a href="#Fabio">Fábio</a>
-										</li>
-										<li data-name="Lorenzo'">
-											<a href="#Lorenzo">Lorenzo</a>
-										</li>
-										<li data-name="Lucca">
-											<a href="#Lucca">Lucca</a>
-										</li>
-										<li data-name="Lais">
-											<a href="#Lais">Láis</a>
-										</li>
-										<li data-name="Felipe">
-											<a href="#Felipe">Felipe</a>
-										</li>
-									</ul>
-									<ul class="list list-ascending">
-										<li data-name="Rafael">
-											<a href="#Rafael">Rafael</a>
-										</li>
-										<li data-name="Renata">
-											<a href="#Renata">Renata</a>
-										</li>
-										<li data-name="Sonia">
-											<a href="#Sonia">Sonia</a>
-										</li>
-										<li data-name="Laercio">
-											<a href="#Laercio">Laércio</a>
-										</li>
-										<li data-name="Miguel">
-											<a href="#Miguel">Miguel</a>
-										</li>
-										<li data-name="Fabio">
-											<a href="#Fabio">Fábio</a>
-										</li>
-										<li data-name="Lorenzo'">
-											<a href="#Lorenzo">Lorenzo</a>
-										</li>
-										<li data-name="Lucca">
-											<a href="#Lucca">Lucca</a>
-										</li>
-										<li data-name="Lais">
-											<a href="#Lais">Láis</a>
-										</li>
-										<li data-name="Felipe">
-											<a href="#Felipe">Felipe</a>
-										</li>
-									</ul>
-									<ul class="list list-descending">
-										<li data-name="Rafael">
-											<a href="#Rafael">Rafael</a>
-										</li>
-										<li data-name="Renata">
-											<a href="#Renata">Renata</a>
-										</li>
-										<li data-name="Sonia">
-											<a href="#Sonia">Sonia</a>
-										</li>
-										<li data-name="Laercio">
-											<a href="#Laercio">Laércio</a>
-										</li>
-										<li data-name="Miguel">
-											<a href="#Miguel">Miguel</a>
-										</li>
-										<li data-name="Fabio">
-											<a href="#Fabio">Fábio</a>
-										</li>
-										<li data-name="Lorenzo'">
-											<a href="#Lorenzo">Lorenzo</a>
-										</li>
-										<li data-name="Lucca">
-											<a href="#Lucca">Lucca</a>
-										</li>
-										<li data-name="Lais">
-											<a href="#Lais">Láis</a>
-										</li>
-										<li data-name="Felipe">
-											<a href="#Felipe">Felipe</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</section>
-					<section>
-						<h4 class="section-title">File Uploader</h4>
-						<div class="row">
-							<div class="column">
-								<div class="product-file-upload">
-									<span class="product-file-upload-title">Arquivo</span>
-									<label class="product-file-upload-label">
-										<input type="file" id="fileProductUpload" name="fileProductUpload" data-name="fileProductUpload" class="fileCustomizationAdvanced product-file-upload-field" />
-										<span class="product-file-upload-value"></span>
-									</label>
-									<span class="product-file-upload-details">Detalhes</span>
-								</div>
-							</div>
-							<div class="column">
-								<h4>Parent List</h4>
-								<div class="filters">
-									<ul class="filter-selected">
-										<li>
-											<span class="item">
-												Pai
-												<span class="item">
-													Filho
-													<a href="" class="delete"></a>
-												</span>
-											</span>
-										</li>
-										<li>
-											<span class="item">Pai<a href="" class="delete"></a></span>
-										</li>
-										<li>
-											<span class="item">Pai<a href="" class="delete"></a></span>
-										</li>
-										<li>
-											<span class="item"
-												>Pai
-												<span class="item"
-													>Filho
-													<a href="" class="delete"></a>
-												</span>
-											</span>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</section>
-					<section class="youtube">
-						<h4 class="section-title">Youtube Player</h4>
-						<div class="row">
-							<div class="column">
-								<div class="youtube-player"></div>
-							</div>
-						</div>
-					</section>
-					<section id="instagram">
-						<h4 class="section-title">Instagram Feed</h4>
-						<div class="row">
-							<div class="column">
-								<div class="instagram">
-									<div class="instagram-container">
-										<ul class="instagram-list"></ul>
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
+					</div>
 				</div>
-			</div>
+			</section>
+			<section class="breadcrumbs">
+				<ul class="breadcrumbs-container">
+					<li class="breadcrumbs-item">
+						<span class="item">A</span>
+					</li>
+					<li class="breadcrumbs-item">
+						<span class="item">B</span>
+					</li>
+					<li class="breadcrumbs-item">
+						<span class="item">C<span class="item">CC</span></span>
+					</li>
+					<li class="breadcrumbs-item">
+						<span class="item">D<span class="item">DD</span></span>
+					</li>
+					<li class="breadcrumbs-item">
+						<span class="item active">E</span>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h4 class="section-title">Lists</h4>
+				<div class="lists">
+					<ul class="list">
+						<li data-name="Rafael">
+							<a href="#Rafael">Rafael</a>
+						</li>
+						<li data-name="Renata">
+							<a href="#Renata">Renata</a>
+						</li>
+						<li data-name="Sonia">
+							<a href="#Sonia">Sonia</a>
+						</li>
+						<li data-name="Laercio">
+							<a href="#Laercio">Laércio</a>
+						</li>
+						<li data-name="Miguel">
+							<a href="#Miguel">Miguel</a>
+						</li>
+						<li data-name="Fabio">
+							<a href="#Fabio">Fábio</a>
+						</li>
+						<li data-name="Lorenzo'">
+							<a href="#Lorenzo">Lorenzo</a>
+						</li>
+						<li data-name="Lucca">
+							<a href="#Lucca">Lucca</a>
+						</li>
+						<li data-name="Lais">
+							<a href="#Lais">Láis</a>
+						</li>
+						<li data-name="Felipe">
+							<a href="#Felipe">Felipe</a>
+						</li>
+						<li data-name="5">
+							<a href="#5">5</a>
+						</li>
+						<li data-name="3">
+							<a href="#3">3</a>
+						</li>
+						<li data-name="2">
+							<a href="#2">2</a>
+						</li>
+						<li data-name="4">
+							<a href="#4">4</a>
+						</li>
+						<li data-name="1">
+							<a href="#1">1</a>
+						</li>
+					</ul>
+					<ul class="list list-ascending">
+						<li data-name="Rafael">
+							<a href="#Rafael">Rafael</a>
+						</li>
+						<li data-name="Renata">
+							<a href="#Renata">Renata</a>
+						</li>
+						<li data-name="Sonia">
+							<a href="#Sonia">Sonia</a>
+						</li>
+						<li data-name="Laercio">
+							<a href="#Laercio">Laércio</a>
+						</li>
+						<li data-name="Miguel">
+							<a href="#Miguel">Miguel</a>
+						</li>
+						<li data-name="Fabio">
+							<a href="#Fabio">Fábio</a>
+						</li>
+						<li data-name="Lorenzo'">
+							<a href="#Lorenzo">Lorenzo</a>
+						</li>
+						<li data-name="Lucca">
+							<a href="#Lucca">Lucca</a>
+						</li>
+						<li data-name="Lais">
+							<a href="#Lais">Láis</a>
+						</li>
+						<li data-name="Felipe">
+							<a href="#Felipe">Felipe</a>
+						</li>
+						<li data-name="5">
+							<a href="#5">5</a>
+						</li>
+						<li data-name="3">
+							<a href="#3">3</a>
+						</li>
+						<li data-name="2">
+							<a href="#2">2</a>
+						</li>
+						<li data-name="4">
+							<a href="#4">4</a>
+						</li>
+						<li data-name="1">
+							<a href="#1">1</a>
+						</li>
+					</ul>
+					<ul class="list list-descending">
+						<li data-name="Rafael">
+							<a href="#Rafael">Rafael</a>
+						</li>
+						<li data-name="Renata">
+							<a href="#Renata">Renata</a>
+						</li>
+						<li data-name="Sonia">
+							<a href="#Sonia">Sonia</a>
+						</li>
+						<li data-name="Laercio">
+							<a href="#Laercio">Laércio</a>
+						</li>
+						<li data-name="Miguel">
+							<a href="#Miguel">Miguel</a>
+						</li>
+						<li data-name="Fabio">
+							<a href="#Fabio">Fábio</a>
+						</li>
+						<li data-name="Lorenzo'">
+							<a href="#Lorenzo">Lorenzo</a>
+						</li>
+						<li data-name="Lucca">
+							<a href="#Lucca">Lucca</a>
+						</li>
+						<li data-name="Lais">
+							<a href="#Lais">Láis</a>
+						</li>
+						<li data-name="Felipe">
+							<a href="#Felipe">Felipe</a>
+						</li>
+						<li data-name="5">
+							<a href="#5">5</a>
+						</li>
+						<li data-name="3">
+							<a href="#3">3</a>
+						</li>
+						<li data-name="2">
+							<a href="#2">2</a>
+						</li>
+						<li data-name="4">
+							<a href="#4">4</a>
+						</li>
+						<li data-name="1">
+							<a href="#1">1</a>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section>
+				<h4 class="section-title">File Uploader</h4>
+				<div class="row">
+					<div class="column">
+						<div class="product-file-upload">
+							<span class="product-file-upload-title">Arquivo</span>
+							<label class="product-file-upload-label">
+								<input type="file" id="fileProductUpload" name="fileProductUpload" data-name="fileProductUpload" class="fileCustomizationAdvanced product-file-upload-field" />
+								<span class="product-file-upload-value"></span>
+							</label>
+							<span class="product-file-upload-details">Detalhes</span>
+						</div>
+					</div>
+					<div class="column">
+						<h4>Parent List</h4>
+						<div class="filters">
+							<ul class="filter-selected">
+								<li>
+									<span class="item">
+										Pai
+										<span class="item">
+											Filho
+											<a href="" class="delete"></a>
+										</span>
+									</span>
+								</li>
+								<li>
+									<span class="item">Pai<a href="" class="delete"></a></span>
+								</li>
+								<li>
+									<span class="item">Pai<a href="" class="delete"></a></span>
+								</li>
+								<li>
+									<span class="item"
+										>Pai
+										<span class="item"
+											>Filho
+											<a href="" class="delete"></a>
+										</span>
+									</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="youtube">
+				<h4 class="section-title">Youtube Player</h4>
+				<div class="youtube-container"></div>
+			</section>
+			<section class="instagram">
+				<h4 class="section-title">Instagram Feed</h4>
+				<div class="instagram-container">
+					<ul class="instagram-list"></ul>
+				</div>
+			</section>
 		</main>
 		<footer class="footer">
 			Footer
 		</footer>
+		<!-- development version, includes helpful console warnings -->
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script src="./js/store.js"></script>
+		<!-- <script src="./js/app1.js"></script>
+		<script src="./js/app2.js"></script>
+		<script src="./js/app3.js"></script> -->
 	</body>
 </html>
