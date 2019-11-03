@@ -12,6 +12,7 @@ const main = {
 		return body.classList.contains(className);
 	},
 
+	// Função de loader da página;
 	pageLoader(time = 0) {
 		const loader = document.querySelector(".loader");
 		if (!!loader) {
@@ -24,7 +25,7 @@ const main = {
 		}
 	},
 
-	// Remove o elemento
+	// Remover o elemento
 	remove(element) {
 		element.parentNode.removeChild(element);
 	},
@@ -47,6 +48,10 @@ const main = {
 	// Inserir elemento What como ultimo filho do elemento Where
 	inAfter(what, where) {
 		where.insertBefore(what, where.lastChild);
+	},
+
+	isNumber(value) {
+		return Number(value);
 	},
 
 	orderAscending(element) {
@@ -102,10 +107,6 @@ const main = {
 	minifiedHeader() {
 		window.addEventListener("scroll", () => {
 			const header = document.querySelector(".header");
-			const showScroll = document.querySelector(".showScroll");
-
-			showScroll ? (showScroll.innerHTML = parseInt(pageYOffset) + "px") : "0";
-
 			parseInt(pageYOffset) >= header.clientHeight ? header.classList.add("minified") : header.classList.remove("minified");
 		});
 	},
@@ -160,6 +161,8 @@ const main = {
 							image.classList.add("instagram-list-image");
 							image.id = element.id;
 							image.src = element.images.thumbnail.url;
+							// image.src = element.images.low_resolution.url;
+							// image.src = element.images.standard_resolution.url;
 
 							const elInstagramListItem = document.createElement("li");
 							elInstagramListItem.classList.add("instagram-list-item");
@@ -176,12 +179,17 @@ const main = {
 					alert("Sorry, there are no results for your search");
 				});
 		}
+
+		const instagramListItem = document.querySelectorAll(".instagram-list-item");
+		console.log(instagramListItem.length);
 	},
 
 	bannerCarousel() {
-		const bannerList = document.querySelector(".banner-list");
+		const bannerList = document.querySelectorAll(".banner-list");
 		if (!!bannerList) {
-			main.createCarousel(bannerList, 1, 5000);
+			bannerList.forEach((element, index) => {
+				element.children.length > 1 ? main.createCarousel(element, 1, 5000) : "";
+			});
 		}
 	},
 

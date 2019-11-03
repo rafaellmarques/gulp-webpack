@@ -122,6 +122,7 @@ var main = {
     var body = document.querySelectorAll("body")[0];
     return body.classList.contains(className);
   },
+  // Função de loader da página;
   pageLoader: function pageLoader() {
     var time = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
     var loader = document.querySelector(".loader");
@@ -137,7 +138,7 @@ var main = {
       }
     }
   },
-  // Remove o elemento
+  // Remover o elemento
   remove: function remove(element) {
     element.parentNode.removeChild(element);
   },
@@ -156,6 +157,9 @@ var main = {
   // Inserir elemento What como ultimo filho do elemento Where
   inAfter: function inAfter(what, where) {
     where.insertBefore(what, where.lastChild);
+  },
+  isNumber: function isNumber(value) {
+    return Number(value);
   },
   orderAscending: function orderAscending(element) {
     element.sort(function (a, b) {
@@ -211,8 +215,6 @@ var main = {
   minifiedHeader: function minifiedHeader() {
     window.addEventListener("scroll", function () {
       var header = document.querySelector(".header");
-      var showScroll = document.querySelector(".showScroll");
-      showScroll ? showScroll.innerHTML = parseInt(pageYOffset) + "px" : "0";
       parseInt(pageYOffset) >= header.clientHeight ? header.classList.add("minified") : header.classList.remove("minified");
     });
   },
@@ -262,7 +264,9 @@ var main = {
             var image = document.createElement("img");
             image.classList.add("instagram-list-image");
             image.id = element.id;
-            image.src = element.images.thumbnail.url;
+            image.src = element.images.thumbnail.url; // image.src = element.images.low_resolution.url;
+            // image.src = element.images.standard_resolution.url;
+
             var elInstagramListItem = document.createElement("li");
             elInstagramListItem.classList.add("instagram-list-item");
             elInstagramListItem.appendChild(image);
@@ -276,12 +280,17 @@ var main = {
         alert("Sorry, there are no results for your search");
       });
     }
+
+    var instagramListItem = document.querySelectorAll(".instagram-list-item");
+    console.log(instagramListItem.length);
   },
   bannerCarousel: function bannerCarousel() {
-    var bannerList = document.querySelector(".banner-list");
+    var bannerList = document.querySelectorAll(".banner-list");
 
     if (!!bannerList) {
-      main.createCarousel(bannerList, 1, 5000);
+      bannerList.forEach(function (element, index) {
+        element.children.length > 1 ? main.createCarousel(element, 1, 5000) : "";
+      });
     }
   },
   createCarousel: function createCarousel(element, perview, autoplay) {
