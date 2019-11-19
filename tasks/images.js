@@ -7,7 +7,7 @@ const imagemin = require("gulp-imagemin");
 // Paths
 const paths = {
 	src: "./src/**/*.{png,jpg,jpeg,gif,svg}",
-	dest: "./dist/img/"
+	dest: "./dist/arquivos/"
 };
 
 // Task

@@ -1,4 +1,4 @@
-﻿let please = {
+﻿const please = {
 	//warnings
 	showError: function(msg) {
 		if (typeof msg === "string") {

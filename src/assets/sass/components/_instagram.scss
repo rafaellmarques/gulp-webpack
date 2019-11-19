@@ -20,11 +20,13 @@
 	&-list-image {
 		border-radius: 10px;
 		display: block;
+		filter: grayscale(100%);
 		margin: 0 auto;
 		overflow: hidden;
 
 		&:hover {
 			box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+			filter: grayscale(0);
 		}
 	}
 }

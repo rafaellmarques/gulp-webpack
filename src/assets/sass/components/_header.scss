@@ -118,7 +118,7 @@
 		.nav-item {
 			color: #cccccc;
 			list-style: none;
-			position: relative;
+			position: static;
 			text-align: center;
 			width: 100%;
 
@@ -128,14 +128,23 @@
 				flex-flow: row nowrap;
 				justify-content: center;
 			}
+
+			&:hover,
+			&:active,
+			&:focus {
+				.nav-subnav {
+					display: flex;
+				}
+			}
 		}
 
 		.nav-subnav {
 			background-color: #ffffff;
 			border-radius: 10px;
 			box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-			display: flex;
+			display: none;
 			flex-flow: row nowrap;
+			left: 0;
 			overflow: hidden;
 			padding: 1rem;
 			position: absolute;
@@ -144,8 +153,6 @@
 			&-container {
 				width: 100%;
 			}
-
-			
 		}
 	}
 
@@ -155,10 +162,6 @@
 
 		.header-logo-a {
 			height: 50px;
-		}
-
-		.header-logo-img {
-			
 		}
 	}
 }

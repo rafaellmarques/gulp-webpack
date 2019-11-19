@@ -10,7 +10,7 @@ sass.compiler = require("node-sass");
 // Paths
 const paths = {
 	src: "./src/**/*.+(sc|sa|c)ss",
-	dest: "./dist/css/"
+	dest: "./dist/arquivos/"
 };
 
 // Task

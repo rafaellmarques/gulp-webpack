@@ -1,5 +1,3 @@
-import glide from "@glidejs/glide";
-
 const main = {
 	// Função olá;
 	hello() {
@@ -180,37 +178,14 @@ const main = {
 				});
 		}
 
-		const instagramListItem = document.querySelectorAll(".instagram-list-item");
-		console.log(instagramListItem.length);
+		setTimeout(() => {
+			const instagramListItem = document.querySelectorAll(".instagram-list-item");
+			console.log("Instagram Itens: " + instagramListItem.length);
+		}, 1000);
 	},
 
 	bannerCarousel() {
-		const bannerList = document.querySelectorAll(".banner-list");
-		if (!!bannerList) {
-			bannerList.forEach((element, index) => {
-				element.children.length > 1 ? main.createCarousel(element, 1, 5000) : "";
-			});
-		}
-	},
-
-	createCarousel(element, perview, autoplay) {
-		if (!!element) {
-			element.classList.add("glide__slides");
-			element.parentNode.classList.add("glide__track");
-			element.parentNode.setAttribute("data-glide-el", "track");
-			element.parentNode.parentNode.classList.add("glide");
-
-			for (let i = 0; i < element.children.length; i++) {
-				element.children[i].classList.add("glide__slide");
-			}
-
-			new glide(element.parentNode.parentNode, {
-				autoplay: autoplay,
-				perView: perview,
-				startAt: 0,
-				type: "caroussel"
-			}).mount();
-		}
+		// $(".banner-list-item").slick();
 	}
 };
 

@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+		<!-- Styles -->
+		<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+		<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+	</head>
+	<body>
+		<main class="main">
+			<section class="banner">
+				<div id="banner-top">
+					<div class="banner-container">
+						<ul class="banner-list">
+							<li class="banner-list-item">
+								<a href="#" class="banner-list-link"><img src="./arquivos/marvel-p1.jpg" alt="" class="banner-list-image"/></a>
+							</li>
+							<li class="banner-list-item">
+								<a href="#" class="banner-list-link"><img src="./arquivos/marvel-p2.jpg" alt="" class="banner-list-image"/></a>
+							</li>
+							<li class="banner-list-item">
+								<a href="#" class="banner-list-link"><img src="./arquivos/marvel-p3.jpg" alt="" class="banner-list-image"/></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+		</main>
+		<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+		<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+		<script>
+			$(document).ready(function() {
+				$(".banner-list").slick();
+			});
+		</script>
+	</body>
+</html>

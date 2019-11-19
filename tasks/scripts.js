@@ -8,7 +8,7 @@ const webpackconfig = require("../webpack.config");
 // Paths
 const paths = {
 	input: "./src/assets/js/bundle.js",
-	output: "./dist/js/"
+	output: "./dist/arquivos/"
 };
 
 // Task

@@ -485,11 +485,6 @@ body.home .main_container {
 
 body.home .main section {
   margin: 0 auto;
-  max-width: 1200px;
-}
-
-body.home .main section.banner {
-  max-width: none;
 }
 
 .banner {
@@ -500,11 +495,32 @@ body.home .main section.banner {
   -webkit-box-direction: normal;
   -ms-flex-flow: row nowrap;
   flex-flow: row nowrap;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.banner-container {
   width: 100%;
 }
 
 .banner-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   margin: 0;
+  padding: 0;
+}
+
+.banner-list-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  width: 100%;
 }
 
 .banner-list-link {
@@ -515,6 +531,50 @@ body.home .main section.banner {
 
 .banner-list-image {
   width: 100%;
+}
+
+.banner#banner-bottom .banner-list-item {
+  padding: 1rem;
+}
+
+.banner#banner-category .banner-list {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+}
+
+.banner#banner-category .banner-list-item {
+  padding: 1rem;
+}
+
+body .main {
+  width: 100%;
+}
+
+body .main section {
+  padding: 1rem;
+}
+
+body .main section .section-title {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  font-size: 1.5rem;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+body .main section .section-title::after, body .main section .section-title::before {
+  content: "";
 }
 
 .breadcrumbs {
@@ -1071,7 +1131,7 @@ body.home .main section.banner {
 .header-nav .nav-item {
   color: #cccccc;
   list-style: none;
-  position: relative;
+  position: static;
   text-align: center;
   width: 100%;
 }
@@ -1092,18 +1152,23 @@ body.home .main section.banner {
   justify-content: center;
 }
 
+.header-nav .nav-item:hover .nav-subnav, .header-nav .nav-item:active .nav-subnav, .header-nav .nav-item:focus .nav-subnav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .header-nav .nav-subnav {
   background-color: #ffffff;
   border-radius: 10px;
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -ms-flex-flow: row nowrap;
   flex-flow: row nowrap;
+  left: 0;
   overflow: hidden;
   padding: 1rem;
   position: absolute;
@@ -1159,6 +1224,8 @@ body.home .main section.banner {
 .instagram-list-image {
   border-radius: 10px;
   display: block;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
   margin: 0 auto;
   overflow: hidden;
 }
@@ -1166,6 +1233,8 @@ body.home .main section.banner {
 .instagram-list-image:hover {
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
 }
 
 .lists {
@@ -1246,11 +1315,11 @@ body.home .main section.banner {
   z-index: 9999;
 }
 
-.loader_logo {
+.loader-logo {
   width: 100px;
 }
 
-.loader_box {
+.loader-box {
   border-radius: 50%;
   height: 150px;
   -webkit-perspective: 800px;
@@ -1259,7 +1328,7 @@ body.home .main section.banner {
   width: 150px;
 }
 
-.loader .box_inner {
+.loader .box-inner {
   border-radius: 50%;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -1268,18 +1337,18 @@ body.home .main section.banner {
   width: 100%;
 }
 
-.loader .box_inner.one {
+.loader .box-inner.one {
   -webkit-animation: rotate-one 1.2s linear infinite;
   animation: rotate-one 1.2s linear infinite;
-  border-bottom: 3px solid #f39223;
+  border-bottom: 3px solid #7dfafc;
   left: 0%;
   top: 0%;
 }
 
-.loader .box_inner.two {
+.loader .box-inner.two {
   -webkit-animation: rotate-two 1.2s linear infinite;
   animation: rotate-two 1.2s linear infinite;
-  border-bottom: 3px solid #272560;
+  border-bottom: 3px solid #ffffff;
   right: 0%;
   top: 0%;
 }

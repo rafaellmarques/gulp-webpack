@@ -1,17 +1,8 @@
 ﻿// Packages
 const gulp = require("gulp");
 const connect = require("gulp-connect");
-const sync = require("browser-sync").create();
 
 // Task
-browserSync = () => {
-	sync.init({
-		server: {
-			baseDir: "./dist"
-		}
-	});
-};
-
 serverConnect = () => {
 	return connect.server({
 		base: "http://localhost",

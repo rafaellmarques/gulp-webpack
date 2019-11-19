@@ -17,11 +17,11 @@
 	width: 100%;
 	z-index: 9999;
 
-	&_logo {
+	&-logo {
 		width: 100px;
 	}
 
-	&_box {
+	&-box {
 		border-radius: 50%;
 		height: 150px;
 		perspective: 800px;
@@ -29,7 +29,7 @@
 		width: 150px;
 	}
 
-	.box_inner {
+	.box-inner {
 		border-radius: 50%;
 		box-sizing: border-box;
 		height: 100%;
@@ -38,14 +38,14 @@
 
 		&.one {
 			animation: rotate-one 1.2s linear infinite;
-			border-bottom: 3px solid #f39223;
+			border-bottom: 3px solid #7dfafc;
 			left: 0%;
 			top: 0%;
 		}
 
 		&.two {
 			animation: rotate-two 1.2s linear infinite;
-			border-bottom: 3px solid #272560;
+			border-bottom: 3px solid #ffffff;
 			right: 0%;
 			top: 0%;
 		}

@@ -1,0 +1,158 @@
+﻿body#account-page {
+    &.account {
+        .bg-danger {
+            background-color: #cc3636;
+        }
+
+        .bg-success {
+            background-color: #60b480;
+        }
+
+        .bg-warning {
+            background-color: #e2b144;
+        }
+
+        .myo-order-card {
+            .myo-order-header ~ div {
+                > div:last-child {
+                    display: flex;
+                    flex-flow: column nowrap;
+                    padding: 0 0.5rem;
+    
+                    a {
+                        align-items: center;
+                        display: flex;
+                        justify-content: center;
+                        min-height: 40px;
+                        padding: 0.25rem;
+                        text-decoration: none;
+    
+                        svg {
+                            fill: #000000;
+                            position: relative;
+                        }
+                    }
+                }
+            }
+
+            .myo-invoice-btn {
+                background: none;
+                border: none;
+                color: #000000;
+                display: flex;
+                margin: 10px 0;
+                order: 1;
+                text-align: center;
+                width: 100%;
+            }
+
+            .myo-details-btn {
+                font-size: 0;
+                margin: 0;
+                order: 0;
+            }
+
+            .bg-action-secondary span {
+                align-items: center;
+                display: flex;
+                flex-flow: row nowrap;
+                font-size: 0;
+                justify-content: center;
+            }
+
+            .bg-action-secondary > span span:after {
+                content: "Acompanhe seu pedido e entrega";
+                font-size: 0.875rem;
+            }
+
+            .myo-tracking-btn {
+                display: none !important;
+            }
+
+            .tedRequest {
+                align-items: center;
+                display: inline-flex;
+                justify-content: center;
+                margin: 0 0 10px;
+                padding: 0 0.5rem;
+                width: 30%;
+
+                a {
+                    align-items: center;
+                    border: 1px solid #000000;
+                    border-radius: 0.25rem;
+                    color: #000000;
+                    display: inline-flex;
+                    font-size: 0;
+                    justify-content: center;
+                    margin: 0 auto;
+                    min-height: 40px;
+                    padding: 0.25rem;
+                    text-decoration: none;
+                    width: 100%;
+
+                    &:before {
+                        content: "Solicitar Troca";
+                        font-size: 0.875rem;
+                        margin: 0 auto;
+                    }
+                }
+            }
+        }
+        .vtex-account__order-details {
+            ul.list {
+                align-items: flex-end;
+                display: flex;
+                flex-direction: column;
+
+                > li {
+                    margin: 0 0 10px;
+                    max-width: 250px;
+                    text-align: center;
+                    width: 100%;
+
+                    a {
+                        align-items: center;
+                        border-radius: 0.25rem;
+                        color: #000000;
+                        display: inline-flex;
+                        justify-content: center;
+                        min-height: 40px;
+                        padding: 0.5rem;
+                        text-decoration: none;
+                        width: 100%;
+
+                        svg {
+                            fill: #000000;
+                            position: relative;
+                        }
+                    }
+
+                    &.tedRequest {
+                        a {
+                            border: 1px solid #000000;
+                            font-size: 0;
+                            margin: 0;
+    
+                            &:before {
+                                content: "Solicitar Troca";
+                                font-size: 0.875rem;
+                                line-height: 1;
+                                margin: 0 auto;
+                            }
+                        }
+                    }
+                    
+                    &:last-child {
+                        display: none;
+                    }
+                }
+            }
+            .custom-tracking-btn {
+                border: 1px solid #000000;
+                font-size: 0;
+                margin: 0;
+            }
+        }
+    }
+}
