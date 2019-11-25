@@ -1,7 +1,45 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito|Open+Sans|Raleway|Roboto|Ubuntu&display=swap");
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Raleway", sans-serif;
+}
+
+body main {
+  width: 100%;
+}
+
+body section {
+  padding: 1rem;
+}
+
+body section .section-title {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  font-size: 1.5rem;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+body section .section-title::after, body section .section-title::before {
+  content: "";
 }
 
 body .container {
@@ -548,35 +586,6 @@ body.home .main section {
   padding: 1rem;
 }
 
-body .main {
-  width: 100%;
-}
-
-body .main section {
-  padding: 1rem;
-}
-
-body .main section .section-title {
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-flow: row nowrap;
-  flex-flow: row nowrap;
-  font-size: 1.5rem;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-body .main section .section-title::after, body .main section .section-title::before {
-  content: "";
-}
-
 .breadcrumbs {
   height: auto;
   margin: 0;
@@ -584,26 +593,25 @@ body .main section .section-title::after, body .main section .section-title::bef
 }
 
 .breadcrumbs-container {
+  -ms-flex-line-pack: center;
   align-content: center;
-  align-items: center;
   -webkit-box-align: center;
-  -webkit-box-direction: normal;
-  -webkit-box-orient: horizontal;
-  -webkit-box-pack: start;
+  -ms-flex-align: center;
+  align-items: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-align: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
   -ms-flex-direction: row;
   flex-direction: row;
-  -ms-flex-line-pack: center;
-  -ms-flex-pack: start;
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
   height: 100%;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
   justify-content: flex-start;
   margin: 0 auto;
-  padding: 0.5em;
   position: relative;
 }
 
@@ -952,8 +960,12 @@ body .main section .section-title::after, body .main section .section-title::bef
   height: 100%;
   margin: 0;
   min-height: 32px;
-  padding: 1em;
+  padding: 0;
   z-index: 1;
+}
+
+.footer-container {
+  padding: 1rem;
 }
 
 .header {
@@ -991,7 +1003,7 @@ body .main section .section-title::after, body .main section .section-title::bef
   -ms-flex-pack: justify;
   justify-content: space-between;
   margin: 0 auto;
-  padding: 10px;
+  padding: 1rem;
   position: relative;
   width: 100%;
 }
@@ -1016,7 +1028,6 @@ body .main section .section-title::after, body .main section .section-title::bef
   -ms-flex-pack: justify;
   justify-content: space-between;
   margin: 0 auto;
-  max-width: 1200px;
   position: relative;
   width: 100%;
 }
@@ -1101,7 +1112,7 @@ body .main section .section-title::after, body .main section .section-title::bef
 .header-nav {
   height: auto;
   margin: 0 auto;
-  padding: 10px;
+  padding: 1rem;
   position: relative;
 }
 
@@ -1123,7 +1134,6 @@ body .main section .section-title::after, body .main section .section-title::bef
   -ms-flex-pack: justify;
   justify-content: space-between;
   margin: 0 auto;
-  max-width: 1200px;
   padding: 0;
   position: relative;
 }
@@ -1172,7 +1182,7 @@ body .main section .section-title::after, body .main section .section-title::bef
   overflow: hidden;
   padding: 1rem;
   position: absolute;
-  width: 1200px;
+  width: 100%;
 }
 
 .header-nav .nav-subnav-container {
@@ -1212,13 +1222,12 @@ body .main section .section-title::after, body .main section .section-title::bef
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-preferred-size: 160px;
-  flex-basis: 160px;
   -webkit-box-flex: 0;
   -ms-flex-positive: 0;
   flex-grow: 0;
   margin: 0;
   padding: 5px;
+  width: calc(100% / 4);
 }
 
 .instagram-list-image {
@@ -1395,6 +1404,11 @@ body .main section .section-title::after, body .main section .section-title::bef
     -webkit-transform: rotateZ(-360deg);
     transform: rotateZ(-360deg);
   }
+}
+
+.title {
+  margin: 0;
+  padding: 1rem;
 }
 
 /*# sourceMappingURL=store.css.map */

@@ -1,15 +1,28 @@
-﻿body#account-page {
-    &.account {
+﻿body {
+	&.account,
+    &.orders {
         .bg-danger {
-            background-color: #cc3636;
+            background-color: #bc0b25;
+			
+			span {
+				color: #fff;
+			}
         }
 
         .bg-success {
-            background-color: #60b480;
+            background-color: #51a351;
+			
+			span {
+				color: #fff;
+			}
         }
 
         .bg-warning {
-            background-color: #e2b144;
+            background-color: #d5b04e;
+			
+			span {
+				color: #fff;
+			}
         }
 
         .myo-order-card {
@@ -52,19 +65,24 @@
                 order: 0;
             }
 
-            .bg-action-secondary span {
-                align-items: center;
-                display: flex;
-                flex-flow: row nowrap;
-                font-size: 0;
-                justify-content: center;
-            }
-
-            .bg-action-secondary > span span:after {
-                content: "Acompanhe seu pedido e entrega";
-                font-size: 0.875rem;
-            }
-
+            .bg-action-secondary {
+				background-color: #000000;
+				color: #fff;
+				
+				span {
+					align-items: center;
+					display: flex;
+					flex-flow: row nowrap;
+					font-size: 0;
+					justify-content: center;
+				}
+				
+				> span span:after {
+					content: "Acompanhe seu pedido e entrega";
+					font-size: 0.875rem;
+				}
+			}
+			
             .myo-tracking-btn {
                 display: none !important;
             }

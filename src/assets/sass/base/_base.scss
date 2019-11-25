@@ -18,9 +18,39 @@ $Raleway: "Raleway", sans-serif !default;
 $Roboto: "Roboto", sans-serif !default;
 $Ubuntu: "Ubuntu", sans-serif !default;
 
+* {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	font-family: $Raleway;
 
+	main {
+        width: 100%;
+        
+	}
+	
+	section {
+		padding: 1rem;
+
+		.section-title {
+			align-items: center;
+			display: flex;
+			flex-flow: row nowrap;
+			font-size: 1.5rem;
+			justify-content: center;
+
+			&::after,
+			&::before {
+				content: "";
+			}
+		}
+	}
+		
 	.container {
 		height: auto;
 		margin: 0 auto;

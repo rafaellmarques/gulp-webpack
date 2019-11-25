@@ -91,29 +91,45 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_main__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-/* harmony import */ var _pages_home__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
+/* harmony import */ var _pages_pages__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
+/* harmony import */ var _pages_category__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
+/* harmony import */ var _pages_department__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
+/* harmony import */ var _pages_home__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5);
+/* harmony import */ var _pages_login__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6);
+/* harmony import */ var _pages_product__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(7);
+// Modules
+ // Pages
+
+
+
+
+
 
 
 
 var init = function init() {
+  if (!_modules_main__WEBPACK_IMPORTED_MODULE_0__["main"].pageName("error")) {
+    _pages_pages__WEBPACK_IMPORTED_MODULE_1__["pages"].init();
+  }
+
   if (_modules_main__WEBPACK_IMPORTED_MODULE_0__["main"].pageName("category")) {
-    category.init();
+    _pages_category__WEBPACK_IMPORTED_MODULE_2__["category"].init();
   }
 
   if (_modules_main__WEBPACK_IMPORTED_MODULE_0__["main"].pageName("department")) {
-    department.init();
+    _pages_department__WEBPACK_IMPORTED_MODULE_3__["department"].init();
   }
 
   if (_modules_main__WEBPACK_IMPORTED_MODULE_0__["main"].pageName("home")) {
-    _pages_home__WEBPACK_IMPORTED_MODULE_1__["home"].init();
+    _pages_home__WEBPACK_IMPORTED_MODULE_4__["home"].init();
   }
 
   if (_modules_main__WEBPACK_IMPORTED_MODULE_0__["main"].pageName("login")) {
-    login.init();
+    _pages_login__WEBPACK_IMPORTED_MODULE_5__["login"].init();
   }
 
   if (_modules_main__WEBPACK_IMPORTED_MODULE_0__["main"].pageName("product")) {
-    product.init();
+    _pages_product__WEBPACK_IMPORTED_MODULE_6__["product"].init();
   }
 };
 
@@ -127,15 +143,6 @@ window.onload = init;
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "main", function() { return main; });
 var main = {
-  // Função olá;
-  hello: function hello() {
-    alert("Hello");
-  },
-  // Função para validar a classe da tag body de cada página ativa;
-  pageName: function pageName(className) {
-    var body = document.querySelectorAll("body")[0];
-    return body.classList.contains(className);
-  },
   // Função de loader da página;
   pageLoader: function pageLoader() {
     var time = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
@@ -151,6 +158,11 @@ var main = {
         }, seconds);
       }
     }
+  },
+  // Função para validar a classe da tag body de cada página ativa;
+  pageName: function pageName(className) {
+    var body = document.getElementsByTagName("body")[0];
+    return body.classList.contains(className);
   },
   // Remover o elemento
   remove: function remove(element) {
@@ -172,97 +184,11 @@ var main = {
   inAfter: function inAfter(what, where) {
     where.insertBefore(what, where.lastChild);
   },
-  isNumber: function isNumber(value) {
-    return Number(value);
-  },
-  orderAscending: function orderAscending(element) {
-    element.sort(function (a, b) {
-      if (a.textContent < b.textContent) {
-        return -1;
-      } else if (a.textContent > b.textContent) {
-        return 1;
-      } else {
-        return 0;
-      }
-    });
-  },
-  orderDescending: function orderDescending(element) {
-    element.sort(function (a, b) {
-      if (a.textContent > b.textContent) {
-        return -1;
-      } else if (a.textContent < b.textContent) {
-        return 1;
-      } else {
-        return 0;
-      }
-    });
-  },
-  // Ordena uma lista
-  orderList: function orderList(element) {
-    var list = document.querySelectorAll(element);
-
-    if (!!list) {
-      list.forEach(function (elementList) {
-        var listItem = elementList.children;
-
-        if (!!listItem) {
-          var newList = [];
-
-          for (var i = 0; i < listItem.length; i++) {
-            newList.push(listItem[i]);
-          }
-
-          if (elementList.classList.contains("list-ascending")) {
-            main.orderAscending(newList);
-          } else if (elementList.classList.contains("list-descending")) {
-            main.orderDescending(newList);
-          } else {//todo
-          }
-
-          for (var _i = 0; _i < newList.length; _i++) {
-            main.inAfter(newList[_i], elementList);
-          }
-        }
-      });
-    }
-  },
   minifiedHeader: function minifiedHeader() {
     window.addEventListener("scroll", function () {
       var header = document.querySelector(".header");
       parseInt(pageYOffset) >= header.clientHeight ? header.classList.add("minified") : header.classList.remove("minified");
     });
-  },
-  getFileName: function getFileName() {
-    var fileField = document.querySelector(".product-file-upload-field");
-    var fileLabel = document.querySelector(".product-file-upload-value");
-    var fileName = "";
-    fileField.addEventListener("change", function (e) {
-      fileName = e.target.value.split("\\").pop();
-
-      if (fileName) {
-        fileLabel.innerHTML = fileName;
-      }
-    });
-    fileField.addEventListener("focus", function () {
-      fileField.classList.add("has-focus");
-    });
-    fileField.addEventListener("blur", function () {
-      fileField.classList.remove("has-focus");
-    });
-  },
-  getParent: function getParent() {
-    var item = document.querySelectorAll(".filters .item");
-
-    if (!!item) {
-      item.trim;
-      item.forEach(function (element) {
-        var itemChild = element.firstElementChild;
-
-        if (!!itemChild && itemChild.classList.contains("item")) {
-          element.removeChild(element.firstChild);
-        }
-      });
-    }
   },
   instagram: function instagram() {
     var link = "https://api.instagram.com/v1/users/self/media/recent/?access_token=";
@@ -277,9 +203,9 @@ var main = {
           try {
             var image = document.createElement("img");
             image.classList.add("instagram-list-image");
-            image.id = element.id;
-            image.src = element.images.thumbnail.url; // image.src = element.images.low_resolution.url;
-            // image.src = element.images.standard_resolution.url;
+            image.id = element.id; // image.src = element.images.thumbnail.url;
+
+            image.src = element.images.low_resolution.url; // image.src = element.images.standard_resolution.url;
 
             var elInstagramListItem = document.createElement("li");
             elInstagramListItem.classList.add("instagram-list-item");
@@ -300,7 +226,17 @@ var main = {
       console.log("Instagram Itens: " + instagramListItem.length);
     }, 1000);
   },
-  bannerCarousel: function bannerCarousel() {// $(".banner-list-item").slick();
+  createCarousel: function createCarousel() {
+    var bannerList = $(".banner-list");
+    var instagramList = $(".instagram-list");
+
+    if (!!bannerList) {
+      bannerList.each(function () {
+        $(".banner-list-item", $(this)).addClass(function (index) {
+          return "position-" + index;
+        });
+      });
+    }
   }
 };
 
@@ -311,19 +247,95 @@ var main = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "pages", function() { return pages; });
+/* harmony import */ var _modules_main__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+
+var pages = {
+  init: function init() {
+    _modules_main__WEBPACK_IMPORTED_MODULE_0__["main"].pageLoader(3);
+    _modules_main__WEBPACK_IMPORTED_MODULE_0__["main"].minifiedHeader();
+  }
+};
+
+
+/***/ }),
+/* 3 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "category", function() { return category; });
+/* harmony import */ var _modules_main__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+
+var category = {
+  init: function init() {
+    console.log("Page: Category");
+  }
+};
+
+
+/***/ }),
+/* 4 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "department", function() { return department; });
+/* harmony import */ var _modules_main__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+
+var department = {
+  init: function init() {
+    console.log("Page: Department");
+  }
+};
+
+
+/***/ }),
+/* 5 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "home", function() { return home; });
 /* harmony import */ var _modules_main__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 
 var home = {
   init: function init() {
-    _modules_main__WEBPACK_IMPORTED_MODULE_0__["main"].pageLoader(5);
-    _modules_main__WEBPACK_IMPORTED_MODULE_0__["main"].minifiedHeader();
-    _modules_main__WEBPACK_IMPORTED_MODULE_0__["main"].getFileName();
-    _modules_main__WEBPACK_IMPORTED_MODULE_0__["main"].getParent();
-    _modules_main__WEBPACK_IMPORTED_MODULE_0__["main"].orderList(".list");
     _modules_main__WEBPACK_IMPORTED_MODULE_0__["main"].instagram();
-    _modules_main__WEBPACK_IMPORTED_MODULE_0__["main"].bannerCarousel();
-    console.log("Página: Home");
+    _modules_main__WEBPACK_IMPORTED_MODULE_0__["main"].createCarousel();
+    console.log("Page: Home");
+  }
+};
+
+
+/***/ }),
+/* 6 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "login", function() { return login; });
+/* harmony import */ var _modules_main__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+
+var login = {
+  init: function init() {
+    console.log("Page: Login");
+  }
+};
+
+
+/***/ }),
+/* 7 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "product", function() { return product; });
+/* harmony import */ var _modules_main__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+
+var product = {
+  init: function init() {
+    console.log("Page: Product");
   }
 };
 

@@ -11,10 +11,10 @@
 	&-list-item:not(.glide__slide) {
 		border-radius: 10px;
 		display: flex;
-		flex-basis: 160px;
 		flex-grow: 0;
 		margin: 0;
 		padding: 5px;
+		width: calc(100% / 4);
 	}
 
 	&-list-image {

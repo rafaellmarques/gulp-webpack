@@ -4,6 +4,7 @@ const autoprefixer = require("gulp-autoprefixer");
 const concat = require("gulp-concat");
 const sass = require("gulp-sass");
 const sourcemaps = require("gulp-sourcemaps");
+const connect = require("gulp-connect");
 
 sass.compiler = require("node-sass");
 
